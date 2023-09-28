@@ -1,0 +1,8 @@
+pip install djangorestframework
+pip install Django
+pip install djangorestframework
+pip install pytest pytest-django django-rest-framework
+pip install pytest
+psycopg2-binary
+django-cors-headers
+pytest-django
