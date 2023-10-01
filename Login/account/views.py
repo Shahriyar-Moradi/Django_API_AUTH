@@ -59,10 +59,11 @@ class UserLoginView(APIView):
 
 
 class UserTestToken(APIView):
+
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
         # Your logic for the GET request goes here
-        data = {"message": "These data only accessible to authenticated users."}
+        data = {"message": " Authenticated user.Now you can access These data "}
         return Response(data, status=status.HTTP_200_OK)
