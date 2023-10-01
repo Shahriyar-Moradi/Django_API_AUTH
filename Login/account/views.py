@@ -30,7 +30,7 @@ class UserRegistrationView(generics.ListCreateAPIView):
         if len(password) < 4:
             return Response({'message': 'Password must be at least 4 characters long.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        user = CustomUser.objects.create_user(username=username, email=email, password=password)
+        user = CustomUser.objects._create_user(username=username, email=email, password=password)
         token, created = Token.objects.get_or_create(user=user)
 
         return Response({'token': token.key}, status=status.HTTP_201_CREATED)
