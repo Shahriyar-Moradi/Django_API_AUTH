@@ -13,4 +13,5 @@ I use a simple SQLite database but you can change it to Postgresql database. You
 
 run pytest command to run the test
 
-You can use the REST Client extension in VSCode to run API_endpoint_test.rest to test APIs.Link https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+You can use the REST Client extension in VSCode to run API_endpoint_test.rest to test APIs.
+Link https://marketplace.visualstudio.com/items?itemName=humao.rest-client
