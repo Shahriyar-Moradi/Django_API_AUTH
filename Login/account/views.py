@@ -36,7 +36,6 @@ class UserRegistrationView(generics.ListCreateAPIView):
         return Response({'token': token.key}, status=status.HTTP_201_CREATED)
 
 
-
 class UserLoginView(APIView):
     serializer_class = LoginSerializer  # Specify the serializer class
 
@@ -59,3 +58,11 @@ class UserLoginView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class UserTestToken(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        # Your logic for the GET request goes here
+        data = {"message": "These data only accessible to authenticated users."}
+        return Response(data, status=status.HTTP_200_OK)
